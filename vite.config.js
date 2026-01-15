@@ -4,13 +4,11 @@ import path from "path";
 
 export default defineConfig({
   base: "/",
+  publicDir: "public", // 🔥 VERY IMPORTANT
   plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
     },
   },
-
-  // ✅ FIX: let Vite include JPG/PNG assets during build
-  assetsInclude: ["**/*.jpg", "**/*.png", "**/*.jpeg"],
 });
