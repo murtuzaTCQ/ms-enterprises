@@ -10,4 +10,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+
+  // ✅ FIX: let Vite include JPG/PNG assets during build
+  assetsInclude: ["**/*.jpg", "**/*.png", "**/*.jpeg"],
 });
