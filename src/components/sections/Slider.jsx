@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 export default function Slider() {
   const slides = [
     {
-      img: "/images/palazoo.jpg",
+      img: "/images/palazzo.jpg",
       title: "Premium Palazzo Collection",
       subtitle: "Soft, comfortable & elegant designs for all retailers.",
     },
     {
-      img: "/images/shrug1.jpg",
+      img: "/images/shrug.jpg",
       title: "Stylish Shrugs",
       subtitle: "Trendy layering options perfect for boutiques.",
     },

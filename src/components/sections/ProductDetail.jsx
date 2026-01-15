@@ -29,7 +29,7 @@ export default function ProductDetail() {
       price: "₹200 – ₹350",
       desc: "Soft and stylish shrugs perfect for layering.",
       images: [
-        "/images/shrug 4.jpg",
+        "/images/shrug4.jpg",
         "/images/shrug2.jpg",
         "/images/shrug3.jpg",
       ],
@@ -49,7 +49,7 @@ export default function ProductDetail() {
       price: "₹220 – ₹400",
       desc: "Traditional ethnic wear in modern designs.",
       images: [
-        "/images/lower1.jpg",
+        "/images/lower.jpg",
         "/images/lower2.jpg",
         "/images/lower.jpg",
       ],

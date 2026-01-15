@@ -5,31 +5,32 @@ export default function Products() {
   const navigate = useNavigate();
 
   const items = [
-    {
-      id: "palazzo",
-      img: "/images/palazoo.jpg",
-      title: "Palazzo",
-      desc: "Premium comfort Palazzo in various designs.",
-    },
-    {
-      id: "shrugs",
-      img: "/images/shrug1.jpg",
-      title: "Shrugs",
-      desc: "Elegant shrugs crafted for modern styling.",
-    },
-    {
-      id: "blouses",
-      img: "/images/blouse.jpg",
-      title: "Blouses",
-      desc: "Fashionable blouses with premium finishing.",
-    },
-    {
-      id: "ethnic-wear",
-      img: "/images/lower.jpg",
-      title: "Ethnic Wear",
-      desc: "Designer ethnic lower wear for all occasions.",
-    },
-  ];
+  {
+    id: "palazzo",
+    img: "/images/palazzo.jpg",   // Correct file exists
+    title: "Palazzo",
+    desc: "Premium comfort Palazzo in various designs.",
+  },
+  {
+    id: "shrugs",
+    img: "/images/shrug.jpg",     // Correct file exists
+    title: "Shrugs",
+    desc: "Elegant shrugs crafted for modern styling.",
+  },
+  {
+    id: "blouses",
+    img: "/images/blouse.jpg",    // Correct file exists
+    title: "Blouses",
+    desc: "Fashionable blouses with premium finishing.",
+  },
+  {
+    id: "ethnic-wear",
+    img: "/images/lower.jpg",     // Correct file exists
+    title: "Ethnic Wear",
+    desc: "Designer ethnic lower wear for all occasions.",
+  },
+];
+
 
   const openDetail = (id) => {
     navigate(`/product/${id}`);
