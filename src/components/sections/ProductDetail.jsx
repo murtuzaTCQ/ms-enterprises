@@ -19,7 +19,7 @@ export default function ProductDetail() {
       price: "₹150 – ₹250",
       desc: "Premium Palazzo available in multiple colors and fabrics.",
       images: [
-        "/images/palazzo4.jpg",
+        "/images/palazzo.jpg",
         "/images/palazzo2.jpg",
         "/images/palazzo3.jpg",
       ],
@@ -29,7 +29,7 @@ export default function ProductDetail() {
       price: "₹200 – ₹350",
       desc: "Soft and stylish shrugs perfect for layering.",
       images: [
-        "/images/shrug4.jpg",
+        "/images/shrug.jpg",
         "/images/shrug2.jpg",
         "/images/shrug3.jpg",
       ],
@@ -51,7 +51,7 @@ export default function ProductDetail() {
       images: [
         "/images/lower.jpg",
         "/images/lower2.jpg",
-        "/images/lower.jpg",
+        "/images/lower3.jpg",
       ],
     },
   };

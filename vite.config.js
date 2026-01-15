@@ -3,8 +3,8 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig({
-  base: "/",
-  publicDir: "public", // 🔥 VERY IMPORTANT
+  base: "",
+  publicDir: "public",
   plugins: [react()],
   resolve: {
     alias: {
