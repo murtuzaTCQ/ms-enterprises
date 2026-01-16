@@ -9,7 +9,6 @@ import { useState } from "react";
 export default function ProductDetail() {
   const { id } = useParams();
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
   const [selectedSize, setSelectedSize] = useState(null);
 
   const productData = {
@@ -17,6 +16,8 @@ export default function ProductDetail() {
       title: "Palazzo",
       price: "₹150 – ₹250",
       desc: "Premium Palazzo available in multiple colors and fabrics.",
+      seoDesc:
+        "Wholesale Palazzo pants with premium stitched quality, comfortable fit and durable fabric.",
       images: [
         "https://res.cloudinary.com/dsfsuecxf/image/upload/v1768542238/palazzo2_t1tz7u.jpg",
         "https://res.cloudinary.com/dsfsuecxf/image/upload/v1768542237/palazzo_wpeeuc.jpg",
@@ -28,6 +29,8 @@ export default function ProductDetail() {
       title: "Shrugs",
       price: "₹200 – ₹350",
       desc: "Soft and stylish shrugs perfect for layering.",
+      seoDesc:
+        "Wholesale women's shrugs perfect for boutiques — soft, stylish, and long-lasting.",
       images: [
         "https://res.cloudinary.com/dsfsuecxf/image/upload/v1768542238/shrug_lmxc5b.jpg",
         "https://res.cloudinary.com/dsfsuecxf/image/upload/v1768542238/shrug2_sdgrlr.jpg",
@@ -39,6 +42,8 @@ export default function ProductDetail() {
       title: "Blouses",
       price: "₹180 – ₹300",
       desc: "Designer blouses with premium stitching.",
+      seoDesc:
+        "Wholesale designer blouses with premium stitching, ethnic wear finishing and modern fit.",
       images: [
         "https://res.cloudinary.com/dsfsuecxf/image/upload/v1768542237/blouse_vhwhff.jpg",
         "https://res.cloudinary.com/dsfsuecxf/image/upload/v1768542237/blouse2_zyhyfe.jpg",
@@ -50,6 +55,8 @@ export default function ProductDetail() {
       title: "Ethnic Wear",
       price: "₹220 – ₹400",
       desc: "Traditional ethnic wear in modern designs.",
+      seoDesc:
+        "Wholesale ethnic wear collection including premium stitched lower wear, modern designs and bulk-ready stock.",
       images: [
         "https://res.cloudinary.com/dsfsuecxf/image/upload/v1768542237/lower_bbhm2d.jpg",
         "https://res.cloudinary.com/dsfsuecxf/image/upload/v1768542237/lower2_wptu1n.jpg",
@@ -68,6 +75,13 @@ export default function ProductDetail() {
   return (
     <div className="pt-[230px] pb-24 animate-fadeIn">
 
+      {/* Hidden SEO text for Google */}
+      <div className="sr-only">
+        {item.title} wholesale by MS Enterprises. {item.seoDesc} Available in multiple colors,
+        premium fabrics, bulk order support and pan-India shipping. Perfect for boutiques, resellers
+        and retailers.
+      </div>
+
       <div className="max-w-6xl mx-auto px-6 mb-8">
         <Link
           to="/#products"
@@ -85,7 +99,8 @@ export default function ProductDetail() {
 
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
 
-        <div>
+        {/* PRODUCT IMAGES */}
+        <div aria-label={`${item.title} product images`}>
           <Swiper
             modules={[Navigation, Pagination, Thumbs]}
             navigation
@@ -95,11 +110,17 @@ export default function ProductDetail() {
           >
             {item.images.map((src, i) => (
               <SwiperSlide key={i}>
-                <img src={src} className="w-full h-[420px] object-cover" />
+                <img
+                  src={src}
+                  alt={`${item.title} image ${i + 1}`}
+                  className="w-full h-[420px] object-cover"
+                  loading="lazy"
+                />
               </SwiperSlide>
             ))}
           </Swiper>
 
+          {/* Thumbnail Swiper */}
           <Swiper
             modules={[Thumbs]}
             onSwiper={setThumbsSwiper}
@@ -111,6 +132,8 @@ export default function ProductDetail() {
               <SwiperSlide key={i}>
                 <img
                   src={src}
+                  alt={`${item.title} thumbnail ${i + 1}`}
+                  loading="lazy"
                   className="w-full h-24 object-cover rounded-xl border"
                 />
               </SwiperSlide>
@@ -118,11 +141,12 @@ export default function ProductDetail() {
           </Swiper>
         </div>
 
-        <div className="bg-white/70 backdrop-blur-xl border border-pink-200 p-10 rounded-3xl shadow-xl">
-
-          <h1 className="text-5xl font-extrabold text-pink-700 mb-4">
-            {item.title}
-          </h1>
+        {/* PRODUCT DETAILS */}
+        <div
+          className="bg-white/70 backdrop-blur-xl border border-pink-200 p-10 rounded-3xl shadow-xl"
+          aria-label={`${item.title} product details`}
+        >
+          <h1 className="text-5xl font-extrabold text-pink-700 mb-4">{item.title}</h1>
 
           <div className="flex items-center gap-3 mb-6">
             <p className="text-4xl font-bold text-pink-600">{item.price}</p>
@@ -133,9 +157,9 @@ export default function ProductDetail() {
 
           <p className="text-gray-700 text-lg mb-6">{item.desc}</p>
 
+          {/* Size Selector */}
           <div className="mb-8">
             <h3 className="text-2xl font-bold mb-3 text-gray-800">Select Size</h3>
-
             <div className="flex gap-4 flex-wrap">
               {["S", "M", "L", "XL", "XXL"].map((size) => (
                 <button
@@ -146,6 +170,7 @@ export default function ProductDetail() {
                       ? "bg-pink-600 text-white border-pink-700"
                       : "bg-white border-gray-300 hover:bg-pink-50"
                   }`}
+                  aria-label={`Select size ${size}`}
                 >
                   {size}
                 </button>
@@ -153,6 +178,7 @@ export default function ProductDetail() {
             </div>
           </div>
 
+          {/* Highlights */}
           <div className="mb-8">
             <h3 className="text-2xl font-bold mb-3 text-gray-800">Highlights</h3>
             <ul className="text-gray-700 space-y-2">
@@ -164,9 +190,11 @@ export default function ProductDetail() {
             </ul>
           </div>
 
+          {/* WhatsApp Button */}
           <a
             href={whatsappLink}
             target="_blank"
+            aria-label={`Order ${item.title} on WhatsApp`}
             className="block text-center bg-green-600 hover:bg-green-700 text-white text-xl font-semibold py-4 rounded-full shadow-lg transition"
           >
             WhatsApp to Order
@@ -174,10 +202,9 @@ export default function ProductDetail() {
         </div>
       </div>
 
+      {/* RELATED PRODUCTS */}
       <div className="max-w-6xl mx-auto px-6 mt-20">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">
-          Related Products
-        </h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-8">Related Products</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {Object.entries(productData).map(([key, p]) =>
@@ -185,21 +212,23 @@ export default function ProductDetail() {
               <Link
                 key={key}
                 to={`/product/${key}`}
+                aria-label={`View ${p.title} product page`}
                 className="bg-white/70 backdrop-blur-xl p-4 rounded-3xl shadow-lg hover:scale-105 transition"
               >
                 <img
                   src={p.images[0]}
+                  alt={`${p.title} product preview`}
+                  loading="lazy"
                   className="w-full h-52 object-cover rounded-2xl mb-4"
                 />
-                <h3 className="text-xl font-semibold text-pink-700">
-                  {p.title}
-                </h3>
+                <h3 className="text-xl font-semibold text-pink-700">{p.title}</h3>
               </Link>
             ) : null
           )}
         </div>
       </div>
 
+      {/* CUSTOMER REVIEWS */}
       <div className="max-w-5xl mx-auto px-6 mt-20">
         <h2 className="text-3xl font-bold mb-8">Customer Reviews</h2>
 
@@ -213,6 +242,7 @@ export default function ProductDetail() {
             <div
               key={i}
               className="bg-white/70 backdrop-blur-xl p-6 rounded-2xl shadow-md"
+              aria-label="Customer review"
             >
               ⭐⭐⭐⭐⭐
               <p className="text-gray-700 mt-3">{review}</p>
