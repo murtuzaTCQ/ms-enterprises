@@ -5,32 +5,31 @@ export default function Products() {
   const navigate = useNavigate();
 
   const items = [
-  {
-    id: "palazzo",
-    img: "/images/palazzo.jpg",   // Correct file exists
-    title: "Palazzo",
-    desc: "Premium comfort Palazzo in various designs.",
-  },
-  {
-    id: "shrugs",
-    img: "/images/shrug.jpg",     // Correct file exists
-    title: "Shrugs",
-    desc: "Elegant shrugs crafted for modern styling.",
-  },
-  {
-    id: "blouses",
-    img: "/images/blouse.jpg",    // Correct file exists
-    title: "Blouses",
-    desc: "Fashionable blouses with premium finishing.",
-  },
-  {
-    id: "ethnic-wear",
-    img: "/images/lower.jpg",     // Correct file exists
-    title: "Ethnic Wear",
-    desc: "Designer ethnic lower wear for all occasions.",
-  },
-];
-
+    {
+      id: "palazzo",
+      img: "https://res.cloudinary.com/dsfsuecxf/image/upload/v1768542238/palazzo2_t1tz7u.jpg",
+      title: "Palazzo",
+      desc: "Premium comfort Palazzo in various designs.",
+    },
+    {
+      id: "shrugs",
+      img: "https://res.cloudinary.com/dsfsuecxf/image/upload/v1768542238/shrug_lmxc5b.jpg",
+      title: "Shrugs",
+      desc: "Elegant shrugs crafted for modern styling.",
+    },
+    {
+      id: "blouses",
+      img: "https://res.cloudinary.com/dsfsuecxf/image/upload/v1768542237/blouse_vhwhff.jpg",
+      title: "Blouses",
+      desc: "Fashionable blouses with premium finishing.",
+    },
+    {
+      id: "ethnic-wear",
+      img: "https://res.cloudinary.com/dsfsuecxf/image/upload/v1768542237/lower_bbhm2d.jpg",
+      title: "Ethnic Wear",
+      desc: "Designer ethnic lower wear for all occasions.",
+    },
+  ];
 
   const openDetail = (id) => {
     navigate(`/product/${id}`);

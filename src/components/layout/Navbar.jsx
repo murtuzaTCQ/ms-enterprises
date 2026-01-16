@@ -38,7 +38,7 @@ export default function Navbar() {
         {/* LOGO — now clickable */}
         <Link to="/#hero" className="flex items-center">
           <img
-            src="/images/logo.png"
+            src="https://res.cloudinary.com/dsfsuecxf/image/upload/v1768542237/logo_qldg6v.png"
             alt="MS Enterprises Logo"
             className="h-24 md:h-28 lg:h-32 w-auto object-contain drop-shadow-md cursor-pointer"
           />

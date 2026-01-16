@@ -5,7 +5,7 @@ export default function Footer() {
 
         {/* Brand */}
         <div>
-          <img src="/images/logo.png" className="h-24 mb-4" />
+          <img src="https://res.cloudinary.com/dsfsuecxf/image/upload/v1768542237/logo_qldg6v.png" className="h-24 mb-4" />
           <p className="text-gray-400">
             Your trusted wholesale fashion partner for women’s apparel.
           </p>
